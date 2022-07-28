@@ -10,6 +10,8 @@ import { BannerComponent } from './componentes/banner/banner.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExperienciaLaboralComponent } from './componentes/experiencia-laboral/experiencia-laboral.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { HardsoftComponent } from './componentes/hardsoft/hardsoft.component';
 
 
 
@@ -23,12 +25,14 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
     AcercaDeComponent,
     ExperienciaLaboralComponent,
     EducacionComponent,
+    HardsoftComponent,
 
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
