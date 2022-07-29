@@ -1,26 +1,19 @@
 .row{
-    padding: 10px;
+    padding: 20px;
 }
 div{
     background-color: #D2B4DE;
     text-align: center;
 }
-/*estilo  etiqueta nombre*/
-
-#nombre{
-    font-weight: bold;
-    
-}
 /* estilo etiqueta perfilfoto*/
-
 @media (min-width: 576px){
     #perfilfoto{
         position: absolute;
-        width: 10%;
+        width: 15%;
+        border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
-        border-radius: 50%;
-        left: 1%;
-        top: 150px;
+        left: 2%;
+        top: 145px;
 
     }
 }
@@ -28,12 +21,16 @@ div{
     #perfilfoto{
         position: absolute;
         width: 30%;
-        box-shadow: 3px 3px 3px grey;
-        border-radius: 50%;
-        left: 2%;
-        top: 180px;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px grey;       
+        left: 33%;
+        top: 550px;
 
     }
 }
-    
+/*estilo  etiqueta nombre*/
+#nombre{
+    font-weight: bold;
+    margin-top: 30%;    
+}    
 
