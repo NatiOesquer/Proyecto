@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { LogoAPComponent } from './componentes/logo-ap/logo-ap.component';
 import { BannerComponent } from './componentes/banner/banner.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
-import { ExperienciaLaboralComponent } from './componentes/experiencia-laboral/experiencia-laboral.component';
+import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardsoftComponent } from './componentes/hardsoft/hardsoft.component';
@@ -16,6 +16,9 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { interceptorProvider } from './service/interceptor-service';
+import { NewExperienciaComponent } from './componentes/experiencia/new-experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './componentes/experiencia/edit-experiencia/edit-experiencia.component';
 
 
 
@@ -26,13 +29,15 @@ import { LoginComponent } from './componentes/login/login.component';
     LogoAPComponent,
     BannerComponent,
     AcercaDeComponent,
-    ExperienciaLaboralComponent,
+    ExperienciaComponent,
     EducacionComponent,
     HardsoftComponent,
     ProyectoComponent,
     FooterComponent,
     HomeComponent,
     LoginComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent,
 
 
   ],
@@ -40,9 +45,12 @@ import { LoginComponent } from './componentes/login/login.component';
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
