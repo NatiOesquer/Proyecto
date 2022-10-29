@@ -1,20 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Experiencia } from '../model/experiencia';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SExperienciaService {
-   expURL = 'https://backendproye.herokuapp.com/explab/';
+   //expURL = 'https://backendproye.herokuapp.com/explab/';
   // expURL = 'http://localhost:8080';
+  expURL = environment + 'explab/';
 
   constructor(private httpclient: HttpClient) { }
 
   public lista(): Observable<Experiencia[]>{
     return this.httpclient.get<Experiencia[]>(this.expURL + 'lista');
-
+                                
   }
 
   public detail(id: number): Observable<Experiencia>{
@@ -22,10 +24,10 @@ export class SExperienciaService {
   }
 
   public save(experiencia: Experiencia): Observable<any>{
-    return this.httpclient.post<any>(this.expURL + `create`, experiencia);
+    return this.httpclient.post<any>(this.expURL + 'create', experiencia);
   }
 
-  public update(id: number, experiencia:Experiencia): Observable<any>{
+  public update(id: number, experiencia: Experiencia): Observable<any>{
     return this.httpclient.put<any>(this.expURL + `update/${id}`, experiencia);
 
   }

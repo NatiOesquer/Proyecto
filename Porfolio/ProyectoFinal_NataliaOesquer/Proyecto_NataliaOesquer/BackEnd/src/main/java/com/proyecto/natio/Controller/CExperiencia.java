@@ -27,8 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/explab")
-//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600, allowCredentials = "false")
-@CrossOrigin(origins="https://frontendproyect.web.app")
+@CrossOrigin(origins = {"https://frontendproyect.web.app","http://localhost:4200"},allowCredentials = "false")
 public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
@@ -46,8 +45,8 @@ public class CExperiencia {
         if(sExperiencia.existsByNombreE(dtoexp.getNombreE()))
             return new ResponseEntity(new Mensaje("Esa experiencia existe"),HttpStatus.BAD_REQUEST);
         
-        Experiencia experiencia = new Experiencia(dtoexp.getNombreE(),dtoexp.getDescripcionE());
-        sExperiencia.save(experiencia);
+        Experiencia expe = new Experiencia(dtoexp.getNombreE(),dtoexp.getDescripcionE());
+        sExperiencia.save(expe);
         
         return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
     }
@@ -66,7 +65,7 @@ public class CExperiencia {
         
         Experiencia experiencia = sExperiencia.getOne(id).get();
         experiencia.setNombreE(dtoexp.getNombreE());
-        experiencia.setDescripcionE(dtoexp.getDescripcionE());
+        experiencia.setDescripcionE((dtoexp.getDescripcionE()));
         
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);

@@ -19,7 +19,7 @@ export class ExperienciaComponent implements OnInit {
     this.cargarExperiencia();
     if(this.tokenService.getToken()){
       this.isLogged = true;
-    }else {
+    } else {
       this.isLogged = false
     }
   }
